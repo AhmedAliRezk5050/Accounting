@@ -1,0 +1,33 @@
+<app-modal modalId="trialBalance">
+  <app-alert *ngIf="alertService.alertShown" [bgColor]="alertService.alertColor">{{alertService.alertMsg}}</app-alert>
+  <div class="flex flex-col items-stretch gap-5">
+    <h5 class="mb-6 text-center text-xl font-bold">
+      {{'trial-balance' | translate}}
+    </h5>
+    <form [formGroup]="searchTrialBalanceForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-6">
+      <app-form-input
+        [inputFormControl]="fromDate"
+        type="date"
+        [label]="'from' | translate"
+        name="fromDate"
+      ></app-form-input>
+      <app-form-input
+        [inputFormControl]="toDate"
+        type="date"
+        [label]="'to' | translate"
+        name="toDate"
+        [required]="false"
+      ></app-form-input>
+
+      <button
+        type="submit"
+        class="block w-full bg-indigo-400
+            text-white py-1.5 px-3
+            rounded transition hover:bg-indigo-500
+            disabled:opacity-50 disabled:bg-indigo-400"
+        [disabled]="searchTrialBalanceForm.invalid || !submitBtnEnabled">
+        {{'search' | translate}}
+      </button>
+    </form>
+  </div>
+</app-modal>

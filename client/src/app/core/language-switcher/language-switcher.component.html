@@ -1,0 +1,13 @@
+<div>
+  <select (change)="switchLanguage($event)"
+          class="appearance-none bg-transparent text-center cursor-pointer
+           border
+            border-gray-300
+            rounded-md py-2
+             px-4 leading-tight
+              focus:outline-none
+               focus:border-blue-500">
+    <option value="en" class="cursor-pointer bg-transparent text-black" [selected]="isEnglish">English</option>
+    <option value="ar" class="cursor-pointer bg-transparent  text-black" [selected]="isArabic">العربية</option>
+  </select>
+</div>

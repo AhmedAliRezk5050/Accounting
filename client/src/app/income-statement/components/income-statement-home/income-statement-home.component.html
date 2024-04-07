@@ -1,0 +1,26 @@
+<div class="container mx-auto flex flex-col gap-5 pt-10 h-full">
+  <app-alert *ngIf="alertService.alertShown" [bgColor]="alertService.alertColor">{{alertService.alertMsg}}</app-alert>
+  <div class="flex flex-row justify-between items-center mb-7">
+    <h2 class="font-bold text-2xl shadow">{{'income-statement' | translate}}</h2>
+    <div class="flex flex-row gap-5">
+      <button class="self-end bg-green-700
+       w-[50px] h-[50px] flex
+        justify-center items-center
+         rounded-full shadow hover:translate-y-0.5" (click)="openIncomeStatementModal()">
+        <fa-icon [icon]="['fas', 'magnifying-glass']" size="xl"></fa-icon>
+      </button>
+      <button class="self-end bg-green-700
+       w-[50px] h-[50px] flex
+       justify-center items-center
+       rounded-full shadow hover:translate-y-0.5 disabled:opacity-25"
+              (click)="printIncomeStatement()"
+              *ngIf="incomeStatement"
+              [disabled]="btnDisabled"
+      >
+        <fa-icon [icon]="['fas', 'print']" size="xl"></fa-icon>
+      </button>
+    </div>
+  </div>
+  <app-income-statement-list *ngIf="incomeStatement" [incomeStatement]="incomeStatement"></app-income-statement-list>
+</div>
+

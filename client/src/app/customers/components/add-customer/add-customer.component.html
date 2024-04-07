@@ -1,0 +1,42 @@
+<div class="container mx-auto flex flex-col gap-7 pt-10 pb-10">
+  <h3 class="text-center">{{'add-customer' | translate}}</h3>
+
+  <app-alert *ngIf="alertService.alertShown" [bgColor]="alertService.alertColor">{{alertService.alertMsg}}</app-alert>
+
+  <form [formGroup]="addCustomerForm" (ngSubmit)="addCustomer()">
+    <div class="flex flex-col gap-8 mb-10">
+      <div class="flex flex-col gap-3">
+        <label>{{'arabic-name' | translate}}</label>
+        <input type="text" formControlName="arabicName">
+      </div>
+      <div class="flex flex-col gap-3">
+        <label>{{'english-name' | translate}}</label>
+        <input type="text" formControlName="englishName">
+      </div>
+      <div class="flex flex-col gap-3">
+        <label>{{'phone-number' | translate}}</label>
+        <input type="text" formControlName="phoneNumber">
+      </div>
+      <div class="flex flex-col gap-3">
+        <label>{{'bank-account-number' | translate}}</label>
+        <input type="text" formControlName="bankAccountNumber">
+      </div>
+      <div class="flex flex-col gap-3">
+        <label>{{'bank-name' | translate}}</label>
+        <input type="text" formControlName="bankName">
+      </div>
+      <div class="flex flex-col gap-3">
+        <label>{{'tax-number' | translate}}</label>
+        <input type="text" formControlName="taxNumber">
+      </div>
+    </div>
+
+
+    <button
+      type="submit"
+      class="add-customer-submit-btn"
+      [disabled]=addCustomerForm.invalid>
+      {{'add-customer' | translate}}
+    </button>
+  </form>
+</div>

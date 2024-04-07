@@ -1,0 +1,20 @@
+<app-nav></app-nav>
+<main class="flex flex-row">
+  <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+  <app-sidebar></app-sidebar>
+  <div class="flex-grow p-5">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+<app-add-account-modal *ngIf="modalService.isModalVisible('addAccount')"></app-add-account-modal>
+<app-account-details-modal *ngIf="modalService.isModalVisible('accountDetails')"></app-account-details-modal>
+<app-delete-account-modal *ngIf="modalService.isModalVisible('deleteAccount')"></app-delete-account-modal>
+<app-edit-account-modal *ngIf="modalService.isModalVisible('editAccount')"></app-edit-account-modal>
+<app-general-ledger-modal *ngIf="modalService.isModalVisible('generalLedger')"></app-general-ledger-modal>
+<app-trial-balance-modal *ngIf="modalService.isModalVisible('trialBalance')"></app-trial-balance-modal>
+<app-balance-sheet-modal *ngIf="modalService.isModalVisible('balanceSheet')"></app-balance-sheet-modal>
+<app-confirmation-modal *ngIf="modalService.isModalVisible('confirm')"></app-confirmation-modal>
+<app-income-statement-modal *ngIf="modalService.isModalVisible('income-statement')"></app-income-statement-modal>
+
+<app-login-modal *ngIf="modalService.isModalVisible('login')"></app-login-modal>
+<app-register-modal *ngIf="modalService.isModalVisible('register')"></app-register-modal>

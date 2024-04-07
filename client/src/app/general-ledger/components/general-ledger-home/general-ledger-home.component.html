@@ -1,0 +1,46 @@
+<div class="container mx-auto flex flex-col gap-5 pt-10 h-full">
+  <div class="flex flex-row justify-between items-center mb-7">
+    <h2 class="font-bold text-2xl shadow">{{'general-ledger' | translate}}</h2>
+    <div class="flex flex-row gap-5">
+      <button class="self-end bg-green-700
+           w-[50px] h-[50px] flex
+            justify-center items-center
+             rounded-full shadow hover:translate-y-0.5" (click)="openSearchGeneralLedgerModal()">
+        <fa-icon [icon]="['fas', 'magnifying-glass']" size="xl"></fa-icon>
+      </button>
+      <button class="self-end bg-green-700
+       w-[50px] h-[50px] flex
+        justify-center items-center
+         rounded-full shadow hover:translate-y-0.5 disabled:opacity-25" (click)="printGeneralLedger()"
+              [disabled]="btnDisabled"
+              *ngIf="generalLedger"
+      >
+        <fa-icon [icon]="['fas', 'print']" size="xl"></fa-icon>
+      </button>
+    </div>
+
+  </div>
+  <ng-container *ngIf="generalLedger">
+    <h3 class="flex gap-5 p-5 w-full justify-center text-xl">
+      <div class="flex gap-2 items-center">
+        <span class="font-bold">{{'from' | translate}}</span>
+        <span class="">{{generalLedger.fromDate}}</span>
+      </div>
+      <div class="flex gap-2 items-center">
+        <span class="font-bold">{{'to' | translate}}</span>
+        <span class="">{{generalLedger.toDate}}</span>
+      </div>
+    </h3>
+    <div class="flex flex-row gap-20">
+      <h3 class="text-xl flex gap-3">
+        <span class="font-bold">{{'code' | translate}}</span>
+        <span class="">{{generalLedger.accountCode}} </span>
+      </h3>
+      <h3 class="text-xl flex gap-3">
+        <span class="font-bold">{{'account-name' | translate}}</span>
+        <span class="">{{isEnglish ? generalLedger.accountEnglishName : generalLedger.accountArabicName}} </span>
+      </h3>
+    </div>
+    <app-general-ledger-entries-list [generalLedger]="generalLedger"></app-general-ledger-entries-list>
+  </ng-container>
+</div>

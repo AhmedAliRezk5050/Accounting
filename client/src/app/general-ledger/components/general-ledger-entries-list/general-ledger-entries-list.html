@@ -1,0 +1,42 @@
+<table class="w-full text-center border">
+  <thead>
+  <tr class="border">
+    <th class="p-3 border">{{'date' | translate}}</th>
+    <th class="p-3 border">{{'description' | translate}}</th>
+    <th class="p-3 border">{{'entry-id' | translate}}</th>
+    <th class="p-3 border">{{'debit' | translate}}</th>
+    <th class="p-3 border">{{'credit' | translate}}</th>
+    <th class="p-3 border">{{'balance' | translate}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let entry of generalLedger.data" class="border hover:bg-indigo-500 hover:cursor-pointer">
+    <td class="p-3 border whitespace-nowrap">
+      {{entry.date.split('T')[0]}}
+    </td>
+    <td class="p-3 border">
+      {{entry.description}}
+    </td>
+    <td class="p-3 border">
+      <a class="rounded p-1 bg-green-400 text-black hover:text-blue-800" [routerLink]="['/entries/edit-entry', entry.entryId]">{{entry.entryId}}</a>
+    </td>
+    <td class="p-3 border">
+      {{entry.debit| comma}}
+    </td>
+    <td class="p-3 border">
+      {{entry.credit| comma}}
+    </td>
+    <td class="p-3 border">
+      {{entry.balance | comma | negativeToParentheses}}
+    </td>
+  </tr>
+  <tr>
+    <td class="p-3 border bg-indigo-500">{{'total' | translate}}</td>
+    <td class="p-3 border bg-indigo-500"></td>
+    <td class="p-3 border bg-indigo-500"></td>
+    <td class="p-3 border bg-indigo-500">{{generalLedger.totalDebit | comma}}</td>
+    <td class="p-3 border bg-indigo-500">{{generalLedger.totalCredit | comma}}</td>
+    <td class="p-3 border bg-indigo-500">{{generalLedger.totalBalance | comma | negativeToParentheses}}</td>
+  </tr>
+  </tbody>
+</table>

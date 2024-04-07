@@ -1,0 +1,36 @@
+<app-modal modalId="accountDetails">
+  <div class="flex flex-col gap-3 mb-6 shadow rounded" *ngIf="account">
+    <h4 class="font-bold text-center text-2xl mb-8">{{'account-details' | translate}}</h4>
+    <ul>
+      <li class="px-3 py-6 flex flex-row justify-between shadow">
+        <div class="flex flex-row gap-3 items-center">
+          <span class="font-bold">{{'account-arabic-name' | translate}}</span>
+          <fa-icon [icon]=arrowIconProp></fa-icon>
+        </div>
+        <span>{{account.arabicName}}</span>
+      </li>
+      <li class="px-3 py-6 flex flex-row justify-between shadow">
+        <div class="flex flex-row gap-3 items-center">
+          <span class="font-bold">{{'account-english-name' | translate}}</span>
+          <fa-icon [icon]=arrowIconProp></fa-icon>
+        </div>
+        <span>{{account.englishName}}</span>
+      </li>
+      <li class="px-3 py-6 flex flex-row justify-between shadow">
+        <div class="flex flex-row gap-3 items-center">
+          <span class="font-bold">{{'account-level' | translate}}</span>
+          <fa-icon [icon]=arrowIconProp></fa-icon>
+        </div>
+        <span>{{account.accountLevel}}</span>
+      </li>
+      <li class="px-3 py-6 flex flex-row justify-between shadow">
+        <div class="flex flex-row gap-3 items-center">
+          <span class="font-bold">{{'account-currency' | translate}}</span>
+          <fa-icon [icon]=arrowIconProp></fa-icon>
+        </div>
+        <span>{{account.currency}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="text-red-600" *ngIf="!account">{{'not-found-account.' | translate}}</div>
+</app-modal>

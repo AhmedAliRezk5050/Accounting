@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="accounts" targetNamespace="http://tempuri.org/accounts.xsd" xmlns:mstns="http://tempuri.org/accounts.xsd" xmlns="http://tempuri.org/accounts.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="accounts" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="accounts" msprop:Generator_DataSetName="accounts">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="accounts" msprop:Generator_RowEvHandlerName="accountsRowChangeEventHandler" msprop:Generator_RowDeletedName="accountsRowDeleted" msprop:Generator_RowDeletingName="accountsRowDeleting" msprop:Generator_RowEvArgName="accountsRowChangeEvent" msprop:Generator_TablePropName="_accounts" msprop:Generator_RowChangedName="accountsRowChanged" msprop:Generator_RowChangingName="accountsRowChanging" msprop:Generator_TableClassName="accountsDataTable" msprop:Generator_RowClassName="accountsRow" msprop:Generator_TableVarName="tableaccounts" msprop:Generator_UserTableName="accounts">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_UserColumnName="Code" type="xs:long" minOccurs="0" />
+              <xs:element name="ArabicName" msprop:Generator_ColumnPropNameInRow="ArabicName" msprop:Generator_ColumnPropNameInTable="ArabicNameColumn" msprop:Generator_ColumnVarNameInTable="columnArabicName" msprop:Generator_UserColumnName="ArabicName" type="xs:string" minOccurs="0" />
+              <xs:element name="EnglishName" msprop:Generator_ColumnPropNameInRow="EnglishName" msprop:Generator_ColumnPropNameInTable="EnglishNameColumn" msprop:Generator_ColumnVarNameInTable="columnEnglishName" msprop:Generator_UserColumnName="EnglishName" type="xs:string" minOccurs="0" />
+              <xs:element name="Balance" msprop:Generator_ColumnPropNameInRow="Balance" msprop:Generator_ColumnPropNameInTable="BalanceColumn" msprop:Generator_ColumnVarNameInTable="columnBalance" msprop:Generator_UserColumnName="Balance" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

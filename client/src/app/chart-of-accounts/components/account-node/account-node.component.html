@@ -1,0 +1,5 @@
+<tr class="bg-[#10172c]">
+  <td class="p-3 border font-bold">{{isEnglish ? account.englishName : account.arabicName}}</td>
+  <td class="p-3 border font-bold">{{account.code}}</td>
+  <td class="p-3 border font-bold">{{account.balance |comma | negativeToParentheses }}</td>
+</tr>

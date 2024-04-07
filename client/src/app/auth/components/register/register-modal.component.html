@@ -1,0 +1,38 @@
+<app-modal modalId="register">
+  <app-alert *ngIf="alertService.alertShown" [bgColor]="alertService.alertColor">{{alertService.alertMsg}}</app-alert>
+
+  <form [formGroup]="registerForm" (ngSubmit)="register()" class="flex flex-col gap-6">
+    <app-form-input
+      [inputFormControl]="userName"
+      [label]="'user-name' | translate"
+      [placeholder]="'user-name' | translate"
+      [validationErrorMessage]="'required' | translate"
+    ></app-form-input>
+
+    <app-form-input
+      [inputFormControl]="password"
+      [label]="'password' | translate"
+      [placeholder]="'password' | translate"
+      [validationErrorMessage]="'required' | translate"
+      [type]="'password'"
+    ></app-form-input>
+
+    <app-form-input
+      [inputFormControl]="confirmPassword"
+      [label]="'confirm-password' | translate"
+      [placeholder]="'confirm-password' | translate"
+      [validationErrorMessage]="'passwords-mismatch' | translate"
+      [type]="'password'"
+    ></app-form-input>
+
+    <button
+      type="submit"
+      class="block w-full bg-indigo-400
+    text-white py-1.5 px-3
+     rounded transition hover:bg-indigo-500
+    disabled:opacity-50 disabled:bg-indigo-400"
+      [disabled]="registerForm.invalid">
+      {{'register' | translate}}
+    </button>
+  </form>
+</app-modal>

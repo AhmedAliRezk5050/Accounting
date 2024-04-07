@@ -1,0 +1,42 @@
+<div class="container mx-auto flex flex-col gap-7 pt-10 h-full">
+  <div class="flex flex-row justify-between items-center mb-7">
+    <h2 class="font-bold text-2xl shadow">{{'suppliers-invoices' | translate}}</h2>
+    <a
+      class="self-end bg-green-700
+       w-[50px] h-[50px] flex
+        justify-center items-center
+         rounded-full shadow hover:translate-y-0.5"
+      routerLink="add-invoice"
+    >
+      <fa-icon [icon]="['fas', 'plus']" size="2xl"></fa-icon>
+    </a>
+  </div>
+  <div class="container mx-auto flex flex-col gap-7 pt-10">
+    <table class="w-full text-center">
+      <thead>
+      <tr>
+        <th class="p-3 border"></th>
+        <th class="p-3 border">{{'invoice-number' | translate}}</th>
+        <th class="p-3 border">{{'date' | translate}}</th>
+        <th class="p-3 border">{{'amount' | translate}}</th>
+        <th class="p-3 border">{{'tax' | translate}}</th>
+        <th class="p-3 border">{{'total-amount' | translate}}</th>
+        <th class="p-3 border">{{'notes' | translate}}</th>
+        <th class="p-3 border">{{'customer-name' | translate}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let invoice of invoices;  let i = index">
+        <td class="p-3 border">{{i + 1}}</td>
+        <td  class="p-3 border">{{invoice.invoiceNumber}}</td>
+        <td  class="p-3 border">{{invoice.date.split('T')[0]}}</td>
+        <td  class="p-3 border">{{invoice.amount}}</td>
+        <td  class="p-3 border">{{invoice.tax}}</td>
+        <td  class="p-3 border">{{invoice.totalAmount}}</td>
+        <td  class="p-3 border">{{invoice.notes}}</td>
+        <td  class="p-3 border">{{invoice.supplier?.arabicName}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

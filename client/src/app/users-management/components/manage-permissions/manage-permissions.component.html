@@ -1,0 +1,17 @@
+<div class="container flex flex-col gap-20">
+  <h2 class="font-bold text-2xl shadow mx-auto flex flex-row gap-3">
+    <span>تعديل صلاحيات</span>
+    <span>{{user?.userName}}</span>
+  </h2>
+
+  <form [formGroup]="permissionsForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-3">
+    <div formArrayName="permissions" class="flex flex-col gap-3">
+      <div *ngFor="let permission of permissions.controls; let i = index" [formGroupName]="i">
+        <input type="checkbox" formControlName="permissionSelected"> {{permission.value.value}}
+      </div>
+    </div>
+    <button type="submit">Update Permissions</button>
+  </form>
+</div>
+
+

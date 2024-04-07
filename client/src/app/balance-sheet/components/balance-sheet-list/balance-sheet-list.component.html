@@ -1,0 +1,54 @@
+<h3 class="flex gap-5 p-5 w-full justify-center text-xl">
+  <div class="flex gap-2 items-center">
+    <span class="font-bold">{{'from' | translate}}</span>
+    <span class="">{{balanceSheet.fromDate}}</span>
+  </div>
+  <div class="flex gap-2 items-center">
+    <span class="font-bold">{{'to' | translate}}</span>
+    <span class="">{{balanceSheet.toDate}}</span>
+  </div>
+</h3>
+<table class="w-full text-center mb-5">
+
+  <tr *ngFor="let a of balanceSheet.assetsAccountsInfoList; let i = index" [class]="setAccountLevelClass(a.level)">
+    <th class="border p-3"> {{a.code}} - {{isEnglish ? a.englishName : a.arabicName}}</th>
+    <td class="border p-3">{{a.balance | toFixed | comma | negativeToParentheses}}</td>
+  </tr>
+
+  <tr *ngFor="let l of balanceSheet.liabilitiesAccountsInfoList; let i = index" [class]="setAccountLevelClass(l.level)">
+    <th class="border p-3"> {{l.code}} - {{isEnglish ? l.englishName : l.arabicName}}</th>
+    <td class="border p-3">{{l.balance | toFixed | comma | negativeToParentheses}}</td>
+  </tr>
+
+  <tr *ngFor="let e of balanceSheet.equityAccountsInfoList; let i = index" [class]="setAccountLevelClass(e.level)">
+    <th class="border p-3"> {{e.code}} - {{isEnglish ? e.englishName : e.arabicName}}</th>
+    <td class="border p-3">{{e.balance | toFixed | comma | negativeToParentheses}}</td>
+  </tr>
+</table>
+
+<table class="w-full text-center mb-5">
+  <tr>
+    <th class="border p-3">إجمالي الخصوم</th>
+    <td class="border p-3">{{balanceSheet.liabilitiesAmount | toFixed | comma | negativeToParentheses}}</td>
+  </tr>
+  <tr>
+    <th class="border p-3">إجمالي الخصوم وراس المال وحقوق الملكية</th>
+    <td
+      class="border p-3">{{
+      balanceSheet.liabilitiesAmount
+      + balanceSheet.equityAmount
+        | toFixed | comma | negativeToParentheses}}</td>
+  </tr>
+  <tr>
+    <th class="border p-3">صافي الربح</th>
+    <td class="border p-3">{{balanceSheet.netIncome | toFixed | comma | negativeToParentheses}}</td>
+  </tr>
+  <tr class="bg-indigo-900">
+    <th class="border p-3">إجمالي الخصوم وراس المال وحقوق الملكية</th>
+    <td
+      class="border p-3">{{ (
+      balanceSheet.liabilitiesAmount +
+      balanceSheet.equityAmount
+      + balanceSheet.netIncome) | toFixed | comma | negativeToParentheses}}</td>
+  </tr>
+</table>

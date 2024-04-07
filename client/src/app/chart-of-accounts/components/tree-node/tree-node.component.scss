@@ -1,0 +1,9 @@
+.node {
+  &_btnGroup {
+    visibility: hidden;
+  }
+
+  &:hover &_btnGroup {
+    visibility: visible;
+  }
+}

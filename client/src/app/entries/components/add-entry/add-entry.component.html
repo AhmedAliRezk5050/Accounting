@@ -1,0 +1,75 @@
+<div class="container mx-auto flex flex-col gap-7 pt-10">
+  <h3 class="text-center">{{'add-entry' | translate}}</h3>
+  <app-alert *ngIf="alertService.alertShown" [bgColor]="alertService.alertColor">{{alertService.alertMsg}}</app-alert>
+  <form [formGroup]="addEntryForm" (ngSubmit)="addEntry()">
+    <div class="flex flex-col gap-8 mb-10">
+      <div class="">
+        <label class="mb-2 block">{{'date' | translate}}</label>
+        <input type="date" formControlName="date" class="rounded p-2"/>
+      </div>
+
+      <div class="">
+        <label class="mb-2 block">{{'description' | translate}}</label>
+        <textarea formControlName="description" class="rounded p-2"></textarea>
+      </div>
+
+      <div class="flex flex-row gap-2">
+        <label>{{'opening-entry' | translate}}</label>
+        <input type="checkbox" formControlName="isOpening">
+      </div>
+    </div>
+
+    <h2 class="mt-4 mb-4">{{'entry-details' | translate}}</h2>
+    <div formArrayName="entryDetails">
+      <table class="w-full border text-center">
+        <tr>
+          <th class="border p-2">{{'account' | translate}}</th>
+          <th class="border p-2">{{'debit' | translate}}</th>
+          <th class="border p-2">{{'credit' | translate}}</th>
+          <th class="border p-2">{{'description' | translate}}</th>
+          <th class="border p-2"></th>
+        </tr>
+        <tr *ngFor="let entryDetail of entryDetails.controls; let i = index">
+          <ng-container [formGroupName]="i" class="entry-detail-row">
+            <td class="border p-2">
+              <app-data-list-search-input
+                (searchStarted)="searchAccounts($event)"
+                [items]="searchInputItems"
+                (valueSelected)="onAccountSelect($event, i)"
+                [placeholder]="'search' | translate"
+              ></app-data-list-search-input>
+              <span class="text-red-600" *ngIf="accountIdSelected === false">{{'select-account' | translate}}</span>
+            </td>
+            <td class="border p-2"><input formControlName="debit" type="number" placeholder="{{'debit' | translate}}"/></td>
+            <td class="border p-2"><input formControlName="credit" type="number" placeholder="{{'credit' | translate}}"/></td>
+            <td class="border p-2"><input formControlName="description" type="text" placeholder="{{'description' | translate}}"/></td>
+            <td class="border p-2">
+              <button (click)="removeEntryDetail(i)">
+                <fa-icon [icon]="['fas', 'trash']" class="delete-entry-detail"
+                ></fa-icon>
+              </button>
+            </td>
+
+          </ng-container>
+        </tr>
+      </table>
+    </div>
+
+    <div class="text-red-600 flex flex-row gap-2 my-5 justify-center p-2 border border-1 rounded border-red-500" *ngIf="!isBalancedEntry">
+      <span>{{'unbalanced-entry' | translate}}</span>
+      <span><b>{{unbalancedEntryAmount}}</b></span>
+    </div>
+    <button
+      type="button"
+      (click)="addEntryDetail()"
+      class="add-entry-detail-btn">{{'add-entry-details' | translate}}</button>
+
+    <button
+      type="submit"
+      class="add-entry-submit-btn"
+      [disabled]="addEntryForm.invalid || !isBalancedEntry || entryDetails.length < 2"
+    >{{'add-entry' | translate}}
+    </button>
+  </form>
+
+</div>

@@ -1,0 +1,13 @@
+<ng-container *ngIf="inputFormControl.invalid && (inputFormControl.dirty || inputFormControl.touched)">
+  <p *ngIf="inputFormControl.errors!['required']" class="text-red-400">{{label}} is required.</p>
+  <p *ngIf="inputFormControl.errors!['minlength']" class="text-red-400">
+    {{label}} must be at least {{inputFormControl.errors!['minlength']['requiredLength']}}  characters long
+    but {{inputFormControl.errors!['minlength']['actualLength']}} entered
+  </p>
+  <p *ngIf="inputFormControl.errors!['pattern']" class="text-red-400">
+    Password at least 8 characters, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number
+  </p>
+  <p *ngIf="inputFormControl.errors!['noMatch']" class="text-red-400">
+    Passwords don't match
+  </p>
+</ng-container>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="incomeStatement" targetNamespace="http://tempuri.org/incomeStatement.xsd" xmlns:mstns="http://tempuri.org/incomeStatement.xsd" xmlns="http://tempuri.org/incomeStatement.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="incomeStatement" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="incomeStatement" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="incomeStatement">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="incomeStatement" msprop:Generator_RowEvHandlerName="incomeStatementRowChangeEventHandler" msprop:Generator_RowDeletedName="incomeStatementRowDeleted" msprop:Generator_RowDeletingName="incomeStatementRowDeleting" msprop:Generator_RowEvArgName="incomeStatementRowChangeEvent" msprop:Generator_TablePropName="_incomeStatement" msprop:Generator_RowChangedName="incomeStatementRowChanged" msprop:Generator_RowChangingName="incomeStatementRowChanging" msprop:Generator_TableClassName="incomeStatementDataTable" msprop:Generator_RowClassName="incomeStatementRow" msprop:Generator_TableVarName="tableincomeStatement" msprop:Generator_UserTableName="incomeStatement">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fromDate" msprop:Generator_ColumnPropNameInRow="fromDate" msprop:Generator_ColumnPropNameInTable="fromDateColumn" msprop:Generator_ColumnVarNameInTable="columnfromDate" msprop:Generator_UserColumnName="fromDate" type="xs:string" minOccurs="0" />
+              <xs:element name="toDate" msprop:Generator_ColumnPropNameInRow="toDate" msprop:Generator_ColumnPropNameInTable="toDateColumn" msprop:Generator_ColumnVarNameInTable="columntoDate" msprop:Generator_UserColumnName="toDate" type="xs:string" minOccurs="0" />
+              <xs:element name="revenuesAmount" msprop:Generator_ColumnPropNameInRow="revenuesAmount" msprop:Generator_ColumnPropNameInTable="revenuesAmountColumn" msprop:Generator_ColumnVarNameInTable="columnrevenuesAmount" msprop:Generator_UserColumnName="revenuesAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="revenueReturnsAmount" msprop:Generator_ColumnPropNameInRow="revenueReturnsAmount" msprop:Generator_ColumnPropNameInTable="revenueReturnsAmountColumn" msprop:Generator_ColumnVarNameInTable="columnrevenueReturnsAmount" msprop:Generator_UserColumnName="revenueReturnsAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="operatingExpensesAmount" msprop:Generator_ColumnPropNameInRow="operatingExpensesAmount" msprop:Generator_ColumnPropNameInTable="operatingExpensesAmountColumn" msprop:Generator_ColumnVarNameInTable="columnoperatingExpensesAmount" msprop:Generator_UserColumnName="operatingExpensesAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="totalProfitOrLoss" msprop:Generator_ColumnPropNameInRow="totalProfitOrLoss" msprop:Generator_ColumnPropNameInTable="totalProfitOrLossColumn" msprop:Generator_ColumnVarNameInTable="columntotalProfitOrLoss" msprop:Generator_UserColumnName="totalProfitOrLoss" type="xs:string" minOccurs="0" />
+              <xs:element name="administrativeAndGeneralExpensesAmount" msprop:Generator_ColumnPropNameInRow="administrativeAndGeneralExpensesAmount" msprop:Generator_ColumnPropNameInTable="administrativeAndGeneralExpensesAmountColumn" msprop:Generator_ColumnVarNameInTable="columnadministrativeAndGeneralExpensesAmount" msprop:Generator_UserColumnName="administrativeAndGeneralExpensesAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="sellingExpensesAmount" msprop:Generator_ColumnPropNameInRow="sellingExpensesAmount" msprop:Generator_ColumnPropNameInTable="sellingExpensesAmountColumn" msprop:Generator_ColumnVarNameInTable="columnsellingExpensesAmount" msprop:Generator_UserColumnName="sellingExpensesAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="financingExpensesAmount" msprop:Generator_ColumnPropNameInRow="financingExpensesAmount" msprop:Generator_ColumnPropNameInTable="financingExpensesAmountColumn" msprop:Generator_ColumnVarNameInTable="columnfinancingExpensesAmount" msprop:Generator_UserColumnName="financingExpensesAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="capitalRevenuesAmount" msprop:Generator_ColumnPropNameInRow="capitalRevenuesAmount" msprop:Generator_ColumnPropNameInTable="capitalRevenuesAmountColumn" msprop:Generator_ColumnVarNameInTable="columncapitalRevenuesAmount" msprop:Generator_UserColumnName="capitalRevenuesAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="accidentCompensationRevenuesAmount" msprop:Generator_ColumnPropNameInRow="accidentCompensationRevenuesAmount" msprop:Generator_ColumnPropNameInTable="accidentCompensationRevenuesAmountColumn" msprop:Generator_ColumnVarNameInTable="columnaccidentCompensationRevenuesAmount" msprop:Generator_UserColumnName="accidentCompensationRevenuesAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="netIncome" msprop:Generator_ColumnPropNameInRow="netIncome" msprop:Generator_ColumnPropNameInTable="netIncomeColumn" msprop:Generator_ColumnVarNameInTable="columnnetIncome" msprop:Generator_UserColumnName="netIncome" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,15 @@
+input {
+  @apply px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
+}
+
+ul {
+  @apply mt-2 border border-gray-300 rounded-md shadow-sm;
+}
+
+li {
+  @apply px-4 py-2 border-b border-gray-300 last:border-b-0;
+}
+
+li:hover {
+  @apply bg-gray-100;
+}

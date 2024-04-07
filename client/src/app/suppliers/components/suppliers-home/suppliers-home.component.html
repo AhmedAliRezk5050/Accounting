@@ -1,0 +1,26 @@
+<div class="container mx-auto flex flex-col gap-7 pt-10 h-full">
+  <div class="flex flex-row justify-between items-center mb-7">
+    <h2 class="font-bold text-2xl shadow">{{'suppliers' | translate}}</h2>
+    <a
+      class="self-end bg-green-700
+       w-[50px] h-[50px] flex
+        justify-center items-center
+         rounded-full shadow hover:translate-y-0.5"
+      routerLink="add-supplier"
+    >
+      <fa-icon [icon]="['fas', 'plus']" size="2xl"></fa-icon>
+    </a>
+  </div>
+  <table class="w-full text-center">
+    <thead>
+    <tr>
+      <th class="p-3 border">{{'name' | translate}}</th>
+      <th class="p-3 border">{{'code' | translate}}</th>
+      <th class="p-3 border">{{'balance' | translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container appNode></ng-container>
+    </tbody>
+  </table>
+</div>

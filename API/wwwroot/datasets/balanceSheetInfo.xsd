@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="balanceSheetInfo" targetNamespace="http://tempuri.org/balanceSheetInfo.xsd" xmlns:mstns="http://tempuri.org/balanceSheetInfo.xsd" xmlns="http://tempuri.org/balanceSheetInfo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="balanceSheetInfo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="balanceSheetInfo" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="balanceSheetInfo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="balanceSheetInfo" msprop:Generator_RowEvHandlerName="balanceSheetInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="balanceSheetInfoRowDeleted" msprop:Generator_RowDeletingName="balanceSheetInfoRowDeleting" msprop:Generator_RowEvArgName="balanceSheetInfoRowChangeEvent" msprop:Generator_TablePropName="_balanceSheetInfo" msprop:Generator_RowChangedName="balanceSheetInfoRowChanged" msprop:Generator_RowChangingName="balanceSheetInfoRowChanging" msprop:Generator_TableClassName="balanceSheetInfoDataTable" msprop:Generator_RowClassName="balanceSheetInfoRow" msprop:Generator_TableVarName="tablebalanceSheetInfo" msprop:Generator_UserTableName="balanceSheetInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fromDate" msprop:Generator_ColumnPropNameInRow="fromDate" msprop:Generator_ColumnPropNameInTable="fromDateColumn" msprop:Generator_ColumnVarNameInTable="columnfromDate" msprop:Generator_UserColumnName="fromDate" type="xs:string" minOccurs="0" />
+              <xs:element name="toDate" msprop:Generator_ColumnPropNameInRow="toDate" msprop:Generator_ColumnPropNameInTable="toDateColumn" msprop:Generator_ColumnVarNameInTable="columntoDate" msprop:Generator_UserColumnName="toDate" type="xs:string" minOccurs="0" />
+              <xs:element name="liability" msprop:Generator_ColumnPropNameInRow="liability" msprop:Generator_ColumnPropNameInTable="liabilityColumn" msprop:Generator_ColumnVarNameInTable="columnliability" msprop:Generator_UserColumnName="liability" type="xs:string" minOccurs="0" />
+              <xs:element name="equityLiabilitySum" msprop:Generator_ColumnPropNameInRow="equityLiabilitySum" msprop:Generator_ColumnPropNameInTable="equityLiabilitySumColumn" msprop:Generator_ColumnVarNameInTable="columnequityLiabilitySum" msprop:Generator_UserColumnName="equityLiabilitySum" type="xs:string" minOccurs="0" />
+              <xs:element name="netIncome" msprop:Generator_ColumnPropNameInRow="netIncome" msprop:Generator_ColumnPropNameInTable="netIncomeColumn" msprop:Generator_ColumnVarNameInTable="columnnetIncome" msprop:Generator_UserColumnName="netIncome" type="xs:string" minOccurs="0" />
+              <xs:element name="equityLiabilityNetIncomeSum" msprop:Generator_ColumnPropNameInRow="equityLiabilityNetIncomeSum" msprop:Generator_ColumnPropNameInTable="equityLiabilityNetIncomeSumColumn" msprop:Generator_ColumnVarNameInTable="columnequityLiabilityNetIncomeSum" msprop:Generator_UserColumnName="equityLiabilityNetIncomeSum" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

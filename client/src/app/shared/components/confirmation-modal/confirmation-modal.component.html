@@ -1,0 +1,23 @@
+<app-modal modalId="confirm">
+  <h3 class="text-xl font-bold text-center w-full" heading>{{modalService.confirmModalInfo.title}}</h3>
+  <app-alert *ngIf="alertService.alertShown" [bgColor]="alertService.alertColor">{{alertService.alertMsg}}</app-alert>
+  <div class="p-4 text-center">
+    <p class="text-xl">{{modalService.confirmModalInfo.message}}</p>
+  </div>
+  <div class="border-t mt-3 pt-3" footer>
+    <div class="flex flex-row justify-center gap-5">
+      <button class="py-2 px-3 rounded"
+              [ngClass]="{
+              'bg-red-600': modalService.confirmModalInfo.type === confirmModalType.Danger,
+              'bg-green-600': modalService.confirmModalInfo.type === confirmModalType.Success,
+              'bg-blue-600': modalService.confirmModalInfo.type === confirmModalType.Info,
+              'bg-yellow-600': modalService.confirmModalInfo.type === confirmModalType.Warning
+              }"
+              (click)="confirm()">{{modalService.confirmModalInfo.confirmBtnText}}</button>
+      <button
+        class="py-2 px-3 rounded bg-green-700"
+        (click)="cancel()">Cancel
+      </button>
+    </div>
+  </div>
+</app-modal>

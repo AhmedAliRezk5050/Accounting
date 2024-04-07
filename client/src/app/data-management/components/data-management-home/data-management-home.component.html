@@ -1,0 +1,36 @@
+<div class="container mx-auto flex flex-col gap-7 pt-10 h-full">
+  <div class="flex flex-row justify-between items-center mb-7">
+    <h2 class="font-bold text-2xl shadow">{{'data-management' | translate}}</h2>
+    <button
+      class="self-end bg-green-700
+       w-[50px] h-[50px] flex
+        justify-center items-center
+         rounded-full shadow hover:translate-y-0.5"
+      (click)="backupDatabase()"
+    >
+      <fa-icon [icon]="['fas', 'plus']" size="2xl"></fa-icon>
+    </button>
+  </div>
+  <table class="w-full text-center">
+    <thead>
+    <tr>
+      <th class="p-3 border">{{'file-date' | translate}}</th>
+      <th class="p-3 border"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let date of readableDates; let i = index">
+      <td class="border p-3">{{ date }}</td>
+      <td class="border p-3">
+        <button
+          class="px-4 py-2 bg-red-500 rounded"
+          (click)="restoreWithFileName(i)"
+        >
+          {{'restore' | translate}}
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="generalLedgerInfo" targetNamespace="http://tempuri.org/generalLedgerInfo.xsd" xmlns:mstns="http://tempuri.org/generalLedgerInfo.xsd" xmlns="http://tempuri.org/generalLedgerInfo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="generalLedgerInfo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="generalLedgerInfo" msprop:Generator_DataSetName="generalLedgerInfo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="generalLedgerInfo" msprop:Generator_RowEvHandlerName="generalLedgerInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="generalLedgerInfoRowDeleted" msprop:Generator_RowDeletingName="generalLedgerInfoRowDeleting" msprop:Generator_RowEvArgName="generalLedgerInfoRowChangeEvent" msprop:Generator_TablePropName="_generalLedgerInfo" msprop:Generator_RowChangedName="generalLedgerInfoRowChanged" msprop:Generator_RowChangingName="generalLedgerInfoRowChanging" msprop:Generator_TableClassName="generalLedgerInfoDataTable" msprop:Generator_RowClassName="generalLedgerInfoRow" msprop:Generator_TableVarName="tablegeneralLedgerInfo" msprop:Generator_UserTableName="generalLedgerInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="from" msprop:Generator_ColumnPropNameInRow="from" msprop:Generator_ColumnPropNameInTable="fromColumn" msprop:Generator_ColumnVarNameInTable="columnfrom" msprop:Generator_UserColumnName="from" type="xs:string" minOccurs="0" />
+              <xs:element name="to" msprop:Generator_ColumnPropNameInRow="to" msprop:Generator_ColumnPropNameInTable="toColumn" msprop:Generator_ColumnVarNameInTable="columnto" msprop:Generator_UserColumnName="to" type="xs:string" minOccurs="0" />
+              <xs:element name="accountCode" msprop:Generator_ColumnPropNameInRow="accountCode" msprop:Generator_ColumnPropNameInTable="accountCodeColumn" msprop:Generator_ColumnVarNameInTable="columnaccountCode" msprop:Generator_UserColumnName="accountCode" type="xs:string" minOccurs="0" />
+              <xs:element name="accountName" msprop:Generator_ColumnPropNameInRow="accountName" msprop:Generator_ColumnPropNameInTable="accountNameColumn" msprop:Generator_ColumnVarNameInTable="columnaccountName" msprop:Generator_UserColumnName="accountName" type="xs:string" minOccurs="0" />
+              <xs:element name="totalBalance" msprop:Generator_ColumnPropNameInRow="totalBalance" msprop:Generator_ColumnPropNameInTable="totalBalanceColumn" msprop:Generator_ColumnVarNameInTable="columntotalBalance" msprop:Generator_UserColumnName="totalBalance" type="xs:string" minOccurs="0" />
+              <xs:element name="totalDebit" msprop:Generator_ColumnPropNameInRow="totalDebit" msprop:Generator_ColumnPropNameInTable="totalDebitColumn" msprop:Generator_ColumnVarNameInTable="columntotalDebit" msprop:Generator_UserColumnName="totalDebit" type="xs:string" minOccurs="0" />
+              <xs:element name="totalCredit" msprop:Generator_ColumnPropNameInRow="totalCredit" msprop:Generator_ColumnPropNameInTable="totalCreditColumn" msprop:Generator_ColumnVarNameInTable="columntotalCredit" msprop:Generator_UserColumnName="totalCredit" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

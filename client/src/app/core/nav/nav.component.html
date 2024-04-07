@@ -1,0 +1,35 @@
+<header id="header" class="bg-secondary text-white">
+  <nav class="container mx-auto flex items-center py-8 px-4 gap-4">
+    <div class="flex flex-grow items-center justify-between">
+      <ul class="flex flex-row justify-center align-middle gap-2">
+
+        <li *ngIf="!isAuthenticated" class="flex flex-col justify-center">
+          <a class="px-2 cursor-pointer"
+             (click)="modalService.toggleModal('login', true)"
+          >
+            {{'login' | translate}}
+          </a>
+        </li>
+        <li class="flex flex-col justify-center" *ngIf="isAuthenticated">
+          <a class="px-2 cursor-pointer"
+             (click)="modalService.toggleModal('register', true)"
+          >
+            {{'register' | translate}}
+          </a>
+        </li>
+        <li *ngIf="isAuthenticated" class="flex flex-col justify-center">
+          <a class="px-2"
+             (click)="logout()"
+          >{{'logout' | translate}}</a>
+        </li>
+        <li *ngIf="isAuthenticated" class="border rounded-md flex flex-col justify-center">
+          <a class="px-2"
+          >{{authService.user?.userName}}</a>
+        </li>
+        <li>
+          <app-language-switcher></app-language-switcher>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

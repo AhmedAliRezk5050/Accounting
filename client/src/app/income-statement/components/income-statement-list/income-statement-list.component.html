@@ -1,0 +1,74 @@
+<h3 class="flex gap-5 p-5 w-full justify-center text-xl">
+  <div class="flex gap-2 items-center">
+    <span class="font-bold">{{'from' | translate}}</span>
+    <span class="">{{incomeStatement.fromDate}}</span>
+  </div>
+  <div class="flex gap-2 items-center">
+    <span class="font-bold">{{'to' | translate}}</span>
+    <span class="">{{incomeStatement.toDate}}</span>
+  </div>
+</h3>
+<table class="w-full text-center">
+  <tr>
+    <th class="border p-3">الايرادات</th>
+    <td class="border p-3">{{incomeStatement.revenuesAmount | toFixed | comma | negativeToParentheses}}</td>
+  </tr>
+  <tr>
+    <th class="border p-3">مردود الايرادات</th>
+    <td class="border p-3">{{incomeStatement.revenueReturnsAmount | toFixed | comma | negativeToParentheses}}</td>
+  </tr>
+  <tr>
+    <th class="border p-3">المصروفات التشغيلية</th>
+    <td class="border p-3">{{incomeStatement.operatingExpensesAmount | toFixed | comma | negativeToParentheses}}</td>
+  </tr>
+  <tr>
+    <th class="border p-3">اجمالي الربح (الخسارة)</th>
+    <td class="border p-3">
+      {{
+      (incomeStatement.revenuesAmount
+      + incomeStatement.revenueReturnsAmount
+    + incomeStatement.operatingExpensesAmount) | toFixed | comma | negativeToParentheses}}</td>
+  </tr>
+
+  <tr>
+    <th class="border p-3">مصروفات ادارية وعمومية</th>
+    <td class="border p-3">{{
+      (incomeStatement.administrativeExpensesAmount +
+      incomeStatement.generalExpensesAmount) | toFixed | comma | negativeToParentheses}}</td>
+  </tr>
+
+  <tr>
+    <th class="border p-3">المصروفات البيعية والتسويقية</th>
+    <td class="border p-3">
+      {{incomeStatement.sellingExpensesAmount | toFixed | comma | negativeToParentheses}}
+    </td>
+  </tr>
+
+  <tr>
+    <th class="border p-3">مكاسب(خسائر) بيع اصول</th>
+    <td class="border p-3">
+      {{incomeStatement.capitalRevenuesAmount | toFixed | comma | negativeToParentheses}}
+    </td>
+  </tr>
+
+  <tr>
+    <th class="border p-3">المصروفات التمويلية</th>
+    <td class="border p-3">
+      {{incomeStatement.financingExpensesAmount | toFixed | comma | negativeToParentheses}}
+    </td>
+  </tr>
+
+  <tr>
+    <th class="border p-3">إيرادات تعويضات الحوادث</th>
+    <td class="border p-3">
+      {{ incomeStatement.accidentCompensationRevenuesAmount | toFixed | comma | negativeToParentheses}}
+    </td>
+  </tr>
+
+  <tr>
+    <th class="border p-3">صافي الدخل</th>
+    <td class="border p-3">
+      {{incomeStatement.netIncome | toFixed | comma | negativeToParentheses}}
+    </td>
+  </tr>
+</table>

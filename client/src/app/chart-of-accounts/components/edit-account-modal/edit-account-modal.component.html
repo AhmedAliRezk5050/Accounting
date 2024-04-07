@@ -1,0 +1,48 @@
+<app-modal modalId="editAccount">
+  <p class="text-2xl font-bold mx-auto mb-5" heading>{{'edit-account' | translate}}</p>
+
+
+  <ng-container *ngIf="account">
+    <app-alert *ngIf="alertService.alertShown" [bgColor]="alertService.alertColor">{{alertService.alertMsg}}</app-alert>
+
+
+    <form [formGroup]="editAccountForm" (ngSubmit)="editAccount()" class="flex flex-col gap-6">
+
+      <app-form-input
+        [inputFormControl]="arabicName"
+        [placeholder]="'account-arabic-name' | translate"
+        [label]="'account-arabic-name' | translate"
+        name="arabicName"
+        [required]="false"
+      ></app-form-input>
+
+      <app-form-input
+        [inputFormControl]="englishName"
+        [placeholder]="'account-english-name' | translate"
+        [label]="'account-english-name' | translate"
+        name="englishName"
+        [required]="false"
+      ></app-form-input>
+
+      <app-form-input
+        [inputFormControl]="currency"
+        [placeholder]="'account-currency' | translate"
+        [label]="'account-currency' | translate"
+        name="currency"
+        [required]="false"
+      ></app-form-input>
+
+      <button
+        type="submit"
+        class="block w-full bg-indigo-400
+            text-white py-1.5 px-3
+            rounded transition hover:bg-indigo-500
+            disabled:opacity-50 disabled:bg-indigo-400"
+        [disabled]="editAccountForm.invalid || !submitBtnEnabled">
+        {{'edit' | translate}}
+      </button>
+    </form>
+  </ng-container>
+
+  <div class="text-red-600" *ngIf="!account">{{'not-found-account' | translate}}</div>
+</app-modal>

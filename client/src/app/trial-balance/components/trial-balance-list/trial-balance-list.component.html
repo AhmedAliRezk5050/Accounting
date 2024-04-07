@@ -1,0 +1,54 @@
+<h3 class="flex gap-5 p-5 w-full justify-center text-xl">
+  <div class="flex gap-2 items-center">
+    <span class="font-bold">{{'from' | translate}}</span>
+    <span class="">{{trialBalance.fromDate}}</span>
+  </div>
+  <div class="flex gap-2 items-center">
+    <span class="font-bold">{{'to' | translate}}</span>
+    <span class="">{{trialBalance.toDate}}</span>
+  </div>
+</h3>
+<table class="w-full text-center">
+  <colgroup>
+    <col>
+    <col>
+    <col span="2">
+    <col span="2">
+    <col span="2">
+  </colgroup>
+  <tr>
+    <th class="border p-3" rowspan="2">{{'code' | translate}}</th>
+    <th class="border p-3" rowspan="2">{{'account-name'| translate}}</th>
+    <th colspan="2" class="border p-3">{{ 'opening-balance' | translate }}</th>
+    <th colspan="2" class="border p-3">{{'transactions' | translate}}</th>
+    <th colspan="2" class="border p-3">{{'balance' | translate}}</th>
+  </tr>
+  <tr>
+    <th scope="col" class="border p-3">{{'debit' | translate}}</th>
+    <th scope="col" class="border p-3">{{'credit' | translate}}</th>
+    <th scope="col" class="border p-3">{{'debit' | translate}}</th>
+    <th scope="col" class="border p-3">{{'credit' | translate}}</th>
+    <th scope="col" class="border p-3">{{'debit' | translate}}</th>
+    <th scope="col" class="border p-3">{{'credit' | translate}}</th>
+  </tr>
+  <tr *ngFor="let trialBalanceQueryResponseListItem of trialBalance.trialBalanceQueryResponseList" class="hover:bg-indigo-500 hover:cursor-pointer">
+    <td class="border p-3">{{trialBalanceQueryResponseListItem.accountCode}}</td>
+    <td class="border p-3">{{ isEnglish ? trialBalanceQueryResponseListItem.accountEnglishName : trialBalanceQueryResponseListItem.accountArabicName}}</td>
+    <td class="border p-3">{{trialBalanceQueryResponseListItem.openingDebit | comma}}</td>
+    <td class="border p-3">{{trialBalanceQueryResponseListItem.openingCredit | comma}}</td>
+    <td class="border p-3">{{trialBalanceQueryResponseListItem.debit | comma}}</td>
+    <td class="border p-3">{{trialBalanceQueryResponseListItem.credit | comma}}</td>
+    <td class="border p-3">{{trialBalanceQueryResponseListItem.endingDebit | comma}}</td>
+    <td class="border p-3">{{trialBalanceQueryResponseListItem.endingCredit | comma}}</td>
+  </tr>
+  <tr>
+    <td class="border p-3"></td>
+    <td class="border p-3">Totals</td>
+    <td class="border p-3">{{trialBalance.totalOpeningDebit | comma}}</td>
+    <td class="border p-3">{{trialBalance.totalOpeningCredit | comma}}</td>
+    <td class="border p-3">{{trialBalance.totalDebit | comma}}</td>
+    <td class="border p-3">{{trialBalance.totalCredit | comma}}</td>
+    <td class="border p-3">{{trialBalance.totalEndingDebit | comma}}</td>
+    <td class="border p-3">{{trialBalance.totalEndingCredit | comma}}</td>
+  </tr>
+</table>

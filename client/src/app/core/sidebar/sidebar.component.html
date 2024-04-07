@@ -1,0 +1,67 @@
+<div class="h-full bg-[#283046] text-white flex flex-col w-[15rem]" *ngIf="isAuthenticated">
+  <ul class="p-5" *ngIf="isAuthenticated">
+    <li>
+      <a class="p-3 block" routerLink="/coa" routerLinkActive="text-indigo-400">{{'accounts' | translate}}</a>
+    </li>
+    <li>
+      <a class="p-3 block" routerLink="/banks" routerLinkActive="text-indigo-400">{{'banks' | translate}}</a>
+    </li>
+    <li>
+      <a class="p-3 block" routerLink="/customers" routerLinkActive="text-indigo-400">{{'customers' | translate}}</a>
+    </li>
+    <li>
+      <a class="p-3 block" routerLink="/suppliers" routerLinkActive="text-indigo-400">{{'suppliers' | translate}}</a>
+    </li>
+    <li>
+      <a class="p-3 block" routerLink="/entries" routerLinkActive="text-indigo-400">{{'entries' | translate}}</a>
+    </li>
+    <li>
+      <a class="p-3 block" routerLink="/general-ledger"
+         routerLinkActive="text-indigo-400">{{'general-ledger' | translate}}</a>
+    </li>
+    <li>
+      <a class="p-3 block" routerLink="/trial-balance"
+         routerLinkActive="text-indigo-400">{{'trial-balance' | translate}}</a>
+    </li>
+    <li>
+      <a class="p-3 block" routerLink="/income-statement"
+         routerLinkActive="text-indigo-400">{{'income-statement' | translate}}</a>
+    </li>
+    <li>
+      <a class="p-3 block" routerLink="/balance-sheet"
+         routerLinkActive="text-indigo-400">{{'balance-sheet' | translate}}</a>
+    </li>
+    <li>
+      <a (click)="toggleSubMenu('users')" class="pt-3 px-3 pb-1 block cursor-pointer">{{'users-management' | translate}}</a>
+      <ul *ngIf="visibleSubMenus['users']" class="space-y-2 pl-4">
+        <li>
+          <a class="p-1 block text-center cursor-pointer"
+             routerLink="/users-management/users"
+             routerLinkActive="text-indigo-400"
+          >{{'users-list' | translate}}</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a (click)="toggleSubMenu('invoices')" class="pt-3 px-3 pb-1 block cursor-pointer">{{'invoices' | translate}}</a>
+      <ul *ngIf="visibleSubMenus['invoices']" class="space-y-2 pl-4">
+        <li>
+          <a class="p-1 block text-center cursor-pointer"
+             routerLink="/invoices/customers"
+             routerLinkActive="text-indigo-400"
+          >{{'customers-invoices' | translate}}</a>
+        </li>
+        <li>
+          <a class="p-1 block text-center cursor-pointer"
+             routerLink="/invoices/suppliers"
+             routerLinkActive="text-indigo-400"
+          >{{'suppliers-invoices' | translate}}</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a class="p-3 block" routerLink="/data-management"
+         routerLinkActive="text-indigo-400">{{'data-management' | translate}}</a>
+    </li>
+  </ul>
+</div>

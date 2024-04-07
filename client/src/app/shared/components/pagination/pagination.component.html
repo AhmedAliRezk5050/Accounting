@@ -1,0 +1,25 @@
+<nav class="flex items-center justify-between p-4">
+  <button
+    class="px-4 py-2 border rounded"
+    [class.bg-blue-500]="currentPage > 1"
+    [class.text-white]="currentPage > 1"
+    [class.text-gray-500]="currentPage === 1"
+    [disabled]="currentPage === 1"
+    (click)="goToPage(currentPage - 1)"
+  >
+    {{'previous' | translate}}
+  </button>
+
+  <span>{{currentPage}} {{'of' | translate}} {{totalPages}}</span>
+
+  <button
+    class="px-4 py-2 border rounded"
+    [class.bg-blue-500]="currentPage < totalPages"
+    [class.text-white]="currentPage < totalPages"
+    [class.text-gray-500]="currentPage === totalPages"
+    [disabled]="currentPage === totalPages"
+    (click)="goToPage(currentPage + 1)"
+  >
+    {{'next' | translate}}
+  </button>
+</nav>

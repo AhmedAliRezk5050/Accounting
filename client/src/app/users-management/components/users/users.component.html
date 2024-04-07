@@ -1,0 +1,25 @@
+<div class="container flex flex-col gap-20">
+  <h2 class="font-bold text-2xl shadow mx-auto">المستخدمين</h2>
+
+  <table class="w-full text-center border">
+    <thead>
+    <tr class="border">
+      <th class="p-3 border">اسم المستخدم</th>
+      <th class="p-3 border"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users" class="border hover:bg-indigo-500">
+      <td class="p-3 border">{{user.userName}}</td>
+      <td class="p-3 border">
+        <a [routerLink]="['manage-permissions', user.id]" class="flex flex-row justify-center gap-4">
+          <fa-icon [icon]="['fas', 'user-gear']"
+                   class="bg-indigo-400 w-[35px] h-[35px]
+                    flex justify-center
+                     items-center rounded-full  cursor-pointer"></fa-icon>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

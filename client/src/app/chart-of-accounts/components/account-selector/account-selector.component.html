@@ -1,0 +1,9 @@
+<div class="my-3">
+  <select class="w-full p-2 text-black rounded outline-indigo-400" (change)="selectAccount($event)">
+    <option disabled selected>Select Account</option>
+    <option
+      *ngFor="let account of accounts"
+      [value]="account.id"
+    >{{account.code}} - {{account.arabicName}}</option>
+  </select>
+</div>

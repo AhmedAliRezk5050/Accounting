@@ -1,0 +1,70 @@
+<app-modal modalId="addAccount">
+  <app-alert *ngIf="alertService.alertShown" [bgColor]="alertService.alertColor">{{alertService.alertMsg}}</app-alert>
+  <p class="text-2xl font-bold mx-auto" heading *ngIf="!treeService.operatingAccount">{{'add-account' | translate}}</p>
+  <div class="flex flex-col gap-3 mb-4 p-5"
+       *ngIf="treeService.operatingAccount">
+    <h4 class="font-bold text-center text-xl mb-5">{{'add-account' | translate}}</h4>
+    <h5 class="font-bold text-center">{{'parent-details' | translate}}</h5>
+    <table class="w-full border text-center">
+      <thead>
+      <tr class="border">
+        <th class="p-2 border">{{'name' | translate}}</th>
+        <th class="p-2 border">{{'code' | translate}}</th>
+        <th class="p-2 border">{{'account-level' | translate}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="border">
+        <td
+          class="p-2 border">{{isEnglish ? treeService.operatingAccount.englishName : treeService.operatingAccount.arabicName}}</td>
+        <td class="p-2 border">{{treeService.operatingAccount.code}}</td>
+        <td class="p-2 border">{{treeService.operatingAccount.accountLevel}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-3 mb-8 shadow" *ngIf="!treeService.operatingAccount">
+    <h4>Parent account</h4>
+    <app-data-list-search-input
+      (searchStarted)="searchAccounts($event)"
+      [items]="searchedAccounts"
+      (valueSelected)="lastSelectedAccountId = $event"
+    ></app-data-list-search-input>
+  </div>
+
+
+  <form [formGroup]="addAccountForm" (ngSubmit)="addAccount()" class="flex flex-col gap-6">
+    <app-form-input
+      [inputFormControl]="arabicName"
+      [placeholder]="'account-arabic-name' | translate"
+      [label]="'account-arabic-name' | translate"
+      name="arabicName"
+    ></app-form-input>
+
+    <app-form-input
+      [inputFormControl]="englishName"
+      [placeholder]="'account-english-name' | translate"
+      [label]="'account-english-name' | translate"
+      name="englishName"
+    ></app-form-input>
+
+    <app-form-input
+      [inputFormControl]="currency"
+      [placeholder]="'account-currency' | translate"
+      [label]="'account-currency' | translate"
+      name="currency"
+      [required]="false"
+    ></app-form-input>
+
+    <button
+      type="submit"
+      class="block w-full bg-indigo-400
+            text-white py-1.5 px-3
+            rounded transition hover:bg-indigo-500
+            disabled:opacity-50 disabled:bg-indigo-400"
+      [disabled]="addAccountForm.invalid || !submitBtnEnabled">
+      {{'add' | translate}}
+    </button>
+  </form>
+</app-modal>

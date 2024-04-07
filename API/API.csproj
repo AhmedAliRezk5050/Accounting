@@ -1,0 +1,250 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\datasets\accounts.Designer.cs" />
+    <Content Remove="wwwroot\datasets\accounts.xsc" />
+    <Content Remove="wwwroot\datasets\accounts.xsd" />
+    <Content Remove="wwwroot\datasets\accounts.xss" />
+    <Content Remove="wwwroot\datasets\balanceSheetAccounts.Designer.cs" />
+    <Content Remove="wwwroot\datasets\balanceSheetAccounts.xsc" />
+    <Content Remove="wwwroot\datasets\balanceSheetAccounts.xsd" />
+    <Content Remove="wwwroot\datasets\balanceSheetAccounts.xss" />
+    <Content Remove="wwwroot\datasets\balanceSheetInfo.Designer.cs" />
+    <Content Remove="wwwroot\datasets\balanceSheetInfo.xsc" />
+    <Content Remove="wwwroot\datasets\balanceSheetInfo.xsd" />
+    <Content Remove="wwwroot\datasets\balanceSheetInfo.xss" />
+    <Content Remove="wwwroot\datasets\entry.Designer.cs" />
+    <Content Remove="wwwroot\datasets\entry.xsc" />
+    <Content Remove="wwwroot\datasets\entry.xsd" />
+    <Content Remove="wwwroot\datasets\entry.xss" />
+    <Content Remove="wwwroot\datasets\entryDetails.Designer.cs" />
+    <Content Remove="wwwroot\datasets\entryDetails.xsc" />
+    <Content Remove="wwwroot\datasets\entryDetails.xsd" />
+    <Content Remove="wwwroot\datasets\entryDetails.xss" />
+    <Content Remove="wwwroot\datasets\generalLedgerInfo.Designer.cs" />
+    <Content Remove="wwwroot\datasets\generalLedgerInfo.xsc" />
+    <Content Remove="wwwroot\datasets\generalLedgerInfo.xsd" />
+    <Content Remove="wwwroot\datasets\generalLedgerInfo.xss" />
+    <Content Remove="wwwroot\datasets\generalLedgerList.Designer.cs" />
+    <Content Remove="wwwroot\datasets\generalLedgerList.xsc" />
+    <Content Remove="wwwroot\datasets\generalLedgerList.xsd" />
+    <Content Remove="wwwroot\datasets\generalLedgerList.xss" />
+    <Content Remove="wwwroot\datasets\incomeStatement.Designer.cs" />
+    <Content Remove="wwwroot\datasets\incomeStatement.xsc" />
+    <Content Remove="wwwroot\datasets\incomeStatement.xsd" />
+    <Content Remove="wwwroot\datasets\incomeStatement.xss" />
+    <Content Remove="wwwroot\datasets\trial-balance.Designer.cs" />
+    <Content Remove="wwwroot\datasets\trial-balance.xsc" />
+    <Content Remove="wwwroot\datasets\trial-balance.xsd" />
+    <Content Remove="wwwroot\datasets\trial-balance.xss" />
+    <Content Remove="wwwroot\datasets\trialBalance.cs" />
+    <Content Remove="wwwroot\datasets\trialBalance.Designer.cs" />
+    <Content Remove="wwwroot\datasets\trialBalance.xsc" />
+    <Content Remove="wwwroot\datasets\trialBalance.xsd" />
+    <Content Remove="wwwroot\datasets\trialBalance.xss" />
+    <Content Remove="wwwroot\datasets\trialBalanceInfo.Designer.cs" />
+    <Content Remove="wwwroot\datasets\trialBalanceInfo.xsc" />
+    <Content Remove="wwwroot\datasets\trialBalanceInfo.xsd" />
+    <Content Remove="wwwroot\datasets\trialBalanceInfo.xss" />
+    <Content Remove="wwwroot\reports\accounts.rdlc" />
+    <Content Remove="wwwroot\reports\balance-sheet.rdlc" />
+    <Content Remove="wwwroot\reports\entry.rdlc" />
+    <Content Remove="wwwroot\reports\generalLedger.rdlc" />
+    <Content Remove="wwwroot\reports\incomeStatement.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="wwwroot\datasets\accounts.Designer.cs">
+      <DependentUpon>accounts.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="wwwroot\datasets\balanceSheetAccounts.Designer.cs">
+      <DependentUpon>balanceSheetAccounts.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="wwwroot\datasets\balanceSheetInfo.Designer.cs">
+      <DependentUpon>balanceSheetInfo.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="wwwroot\datasets\entry.Designer.cs">
+      <DependentUpon>entry.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="wwwroot\datasets\entryDetails.Designer.cs">
+      <DependentUpon>entryDetails.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="wwwroot\datasets\generalLedgerInfo.Designer.cs">
+      <DependentUpon>generalLedgerInfo.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="wwwroot\datasets\generalLedgerList.Designer.cs">
+      <DependentUpon>generalLedgerList.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="wwwroot\datasets\incomeStatement.Designer.cs">
+      <DependentUpon>incomeStatement.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="wwwroot\datasets\trial-balance.Designer.cs">
+      <DependentUpon>trial-balance.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="wwwroot\datasets\trialBalance.cs" />
+    <Compile Include="wwwroot\datasets\trialBalance.Designer.cs">
+      <DependentUpon>trialBalance.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="wwwroot\datasets\trialBalanceInfo.Designer.cs">
+      <DependentUpon>trialBalanceInfo.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.Reporting" Version="2.1.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="ClosedXML" Version="0.100.3" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.22" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.0" />
+    <PackageReference Include="System.Security.Permissions" Version="7.0.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\datasets\accounts.xsc" />
+    <None Include="wwwroot\datasets\accounts.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>accounts.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\datasets\accounts.xss" />
+    <None Include="wwwroot\datasets\balanceSheetAccounts.xsc" />
+    <None Include="wwwroot\datasets\balanceSheetAccounts.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>balanceSheetAccounts.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\datasets\balanceSheetAccounts.xss" />
+    <None Include="wwwroot\datasets\balanceSheetInfo.xsc" />
+    <None Include="wwwroot\datasets\balanceSheetInfo.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>balanceSheetInfo.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\datasets\balanceSheetInfo.xss" />
+    <None Include="wwwroot\datasets\entry.xsc" />
+    <None Include="wwwroot\datasets\entry.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>entry.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\datasets\entry.xss" />
+    <None Include="wwwroot\datasets\entryDetails.xsc" />
+    <None Include="wwwroot\datasets\entryDetails.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>entryDetails.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\datasets\entryDetails.xss" />
+    <None Include="wwwroot\datasets\generalLedgerInfo.xsc" />
+    <None Include="wwwroot\datasets\generalLedgerInfo.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>generalLedgerInfo.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\datasets\generalLedgerInfo.xss" />
+    <None Include="wwwroot\datasets\generalLedgerList.xsc" />
+    <None Include="wwwroot\datasets\generalLedgerList.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>generalLedgerList.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\datasets\generalLedgerList.xss" />
+    <None Include="wwwroot\datasets\incomeStatement.xsc" />
+    <None Include="wwwroot\datasets\incomeStatement.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>incomeStatement.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\datasets\incomeStatement.xss" />
+    <None Include="wwwroot\datasets\trial-balance.xsc" />
+    <None Include="wwwroot\datasets\trial-balance.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>trial-balance.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\datasets\trial-balance.xss" />
+    <None Include="wwwroot\datasets\trialBalance.xsc" />
+    <None Include="wwwroot\datasets\trialBalance.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>trialBalance.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\datasets\trialBalance.xss" />
+    <None Include="wwwroot\datasets\trialBalanceInfo.xsc" />
+    <None Include="wwwroot\datasets\trialBalanceInfo.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>trialBalanceInfo.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\datasets\trialBalanceInfo.xss" />
+    <None Include="wwwroot\reports\accounts.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\reports\balance-sheet.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\reports\entry.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\reports\generalLedger.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\reports\incomeStatement.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,42 @@
+<div class="p-4  flex flex-row justify-between shadow-2xl hover:bg-indigo-500 cursor-pointer node"
+     *ngIf="account"
+     (click)="onNodeClick()">
+  <div class="flex flex-row gap-2 items-center">
+    <span *ngIf="!nodeIsOpen"><fa-icon [icon]=arrowIconProp
+                                       class="bg-indigo-500 w-[30px] h-[30px] flex justify-center items-center rounded-full"></fa-icon></span>
+    <span *ngIf="nodeIsOpen"><fa-icon [icon]="['fas', 'arrow-down']"
+                                      class="bg-indigo-400 w-[30px] h-[30px] flex justify-center items-center rounded-full"></fa-icon></span>
+    <span class="bg-amber-700 flex justify-center items-center rounded py-1 px-2 ml-2 mr-2">{{account.code}}</span>
+    <span class="ml-2">{{isEnglishMode ? account.englishName : account.arabicName}}</span>
+    <span class="ml-2">{{account.balance | comma | negativeToParentheses}}</span>
+  </div>
+  <div class="flex flex-row gap-5 node_btnGroup">
+    <button (click)="viewAccount($event)">
+      <fa-icon [icon]="['fas', 'book-open']"
+               class="bg-fuchsia-900 w-[40px] h-[40px]
+                flex justify-center items-center rounded hover:translate-y-0.5"
+      ></fa-icon>
+    </button>
+    <button (click)="addAccount($event)" *ngIf="account.accountLevel < 6">
+      <fa-icon [icon]="['fas', 'plus']"
+               class="bg-emerald-600 w-[40px] h-[40px]
+                flex justify-center items-center rounded hover:translate-y-0.5"
+      ></fa-icon>
+    </button>
+    <button (click)="EditAccount($event)">
+      <fa-icon [icon]="['fas', 'pen']"
+               class="bg-yellow-500 w-[40px] h-[40px]
+                flex justify-center items-center rounded hover:translate-y-0.5"
+      ></fa-icon>
+    </button>
+    <button *ngIf="!account.isMain && !account.hasEntry" (click)="deleteAccount($event)">
+      <fa-icon [icon]="['fas', 'trash']"
+               class="bg-red-500 w-[40px] h-[40px]
+                flex justify-center items-center rounded hover:translate-y-0.5"
+      ></fa-icon>
+    </button>
+  </div>
+</div>
+<div class="ml-8">
+  <ng-container appNode></ng-container>
+</div>

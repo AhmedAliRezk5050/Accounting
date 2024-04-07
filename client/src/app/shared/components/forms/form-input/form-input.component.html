@@ -1,0 +1,31 @@
+<div class="">
+  <label class="flex flex-row justify-between mb-2">
+    <span>{{label}}</span>
+    <span class="text-red-600 text-xl" *ngIf="required">*</span>
+  </label>
+  <input
+    class="block w-full py-1.5 px-3 text-gray-200 border
+     border-gray-400 transition duration-500
+      focus:outline-none rounded
+      bg-transparent focus:border-indigo-400"
+    [required]="required"
+    [formControl]="inputFormControl"
+    [name]="name"
+    [type]="type"
+   [readonly]="disabled"
+    [placeholder]="placeholder"
+  />
+  <ng-container *ngIf="inputFormControl.invalid && (inputFormControl.dirty || inputFormControl.touched)">
+    <p *ngIf="inputFormControl.errors!['required']" class="text-red-400">{{label}} {{validationErrorMessage}}</p>
+    <p *ngIf="inputFormControl.errors!['minlength']" class="text-red-400">
+      {{label}} must be at least {{inputFormControl.errors!['minlength']['requiredLength']}}  characters long
+      but {{inputFormControl.errors!['minlength']['actualLength']}} entered
+    </p>
+    <p *ngIf="inputFormControl.errors!['pattern']" class="text-red-400">
+      Password at least 8 characters, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number
+    </p>
+    <p *ngIf="inputFormControl.errors!['noMatch']" class="text-red-400">
+      {{validationErrorMessage}}
+    </p>
+  </ng-container>
+</div>

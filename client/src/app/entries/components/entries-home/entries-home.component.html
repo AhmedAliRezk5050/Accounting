@@ -1,0 +1,74 @@
+<div class="container mx-auto flex flex-col gap-7 pt-10 h-full">
+  <app-alert *ngIf="alertService.alertShown" [bgColor]="alertService.alertColor">{{alertService.alertMsg}}</app-alert>
+  <div class="flex flex-row justify-between items-center mb-7">
+    <h2 class="font-bold text-2xl shadow">{{'entries' | translate}}</h2>
+    <a
+      class="self-end bg-green-700
+       w-[50px] h-[50px] flex
+        justify-center items-center
+         rounded-full shadow hover:translate-y-0.5"
+      routerLink="add-entry"
+    >
+      <fa-icon [icon]="['fas', 'plus']" size="2xl"></fa-icon>
+    </a>
+  </div>
+  <app-pagination
+    (pageChange)="entriesService.fetchEntries($event)"
+    [totalPages]="Math.ceil(pagedResponse.totalCount / 10)"
+  ></app-pagination>
+  <ng-container *ngIf="pagedResponse.items.length > 0; else noEntries">
+    <table class="w-full text-center border">
+      <thead>
+      <tr class="border">
+        <th class="w-[7rem] p-3 border">الرقم</th>
+        <th class="w-[7rem] p-3 border">التاريخ</th>
+        <th class="w-[7rem] p-3 border">الوصف</th>
+        <th class="w-[7rem] p-3 border">مدين</th>
+        <th class="w-[4rem] p-3 border">مرحل</th>
+        <th class="w-[6rem] p-3 border"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let entry of pagedResponse.items" class="border hover:bg-indigo-500 hover:cursor-pointer">
+        <td class="p-3 border">{{entry.id}}</td>
+        <td class="p-3 border">{{entry.entryDate}}</td>
+        <td class="p-3 border">{{entry.description}}</td>
+        <td class="p-3 border">
+          {{entry.totalDebit | comma | negativeToParentheses}}
+        </td>
+        <td class="p-3 border">{{entry.isPosted ? 'نعم' : 'لا'}}</td>
+        <td class="p-3 border">
+          <div class="flex flex-row gap-2 justify-center">
+            <button (click)="postEntry(entry.id)" *ngIf="!entry.isPosted">
+              <fa-icon [icon]="['fas', 'paper-plane']" class="bg-emerald-600 w-[35px] h-[35px]
+                flex justify-center items-center rounded hover:translate-y-0.5"></fa-icon>
+            </button>
+
+            <a [routerLink]="['edit-entry', entry.id]">
+              <fa-icon [icon]="['fas', 'pen']"
+                       class="bg-yellow-500 w-[35px] h-[35px]
+                flex justify-center items-center rounded hover:translate-y-0.5"
+              ></fa-icon>
+            </a>
+            <button (click)="deleteEntry(entry.id)">
+              <fa-icon [icon]="['fas', 'trash']"
+                       class="bg-red-500 w-[35px] h-[35px]
+                flex justify-center items-center rounded hover:translate-y-0.5"
+              ></fa-icon>
+            </button>
+            <button (click)="printEntry(entry.id)" [disabled]="btnDisabled" class="disabled:opacity-25">
+              <fa-icon [icon]="['fas', 'print']"
+                       class="bg-green-700 w-[35px] h-[35px]
+                flex justify-center items-center rounded hover:translate-y-0.5"
+              ></fa-icon>
+            </button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-template #noEntries>
+    <h3 class="text-center text-2xl">{{'not-found-entries' | translate}}</h3>
+  </ng-template>
+</div>

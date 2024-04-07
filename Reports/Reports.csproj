@@ -1,0 +1,140 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\</ReferencePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="DataSets\accounts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>accounts.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\balanceSheetAccounts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>balanceSheetAccounts.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\balanceSheetInfo.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>balanceSheetInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\entry.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>entry.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\entryDetails.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>entryDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\generalLedgerInfo.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>generalLedgerInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\generalLedgerList.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>generalLedgerList.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\incomeStatement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>incomeStatement.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\trialBalance.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>trialBalance.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\trialBalanceInfo.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>trialBalanceInfo.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataSets\accounts.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>accounts.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DataSets\balanceSheetAccounts.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>balanceSheetAccounts.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DataSets\balanceSheetInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>balanceSheetInfo.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DataSets\entry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>entry.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DataSets\entryDetails.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>entryDetails.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DataSets\generalLedgerInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>generalLedgerInfo.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DataSets\generalLedgerList.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>generalLedgerList.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DataSets\incomeStatement.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>incomeStatement.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DataSets\trialBalance.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>trialBalance.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DataSets\trialBalanceInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>trialBalanceInfo.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\accounts.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\balance-sheet.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\entry.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\generalLedger.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\incomeStatement.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\trial-balance.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{c0c07587-41a7-46c8-8fbd-3f9c8ebe2ddc}" />
+  </ItemGroup>
+
+</Project>
